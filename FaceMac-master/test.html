@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>虚弱不堪</title>
+		<link rel="stylesheet" type="text/css" href="css/test.css" />
+		<script src="js/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="logol">
+				
+			</div>
+			<div id="nav">
+				
+			</div>
+			<div id="Main">
+				<div id="leftMain">
+					
+				</div>
+				<div id="rightMain">
+					
+				</div>
+			</div>
+			<div id="footer">
+				
+			</div>
+			
+		</div>
+		
+		<div id="ll">
+			<form action="#" method="post">
+				<fieldset>
+					<legend>基本信息</legend>
+					<label for="name">姓名：</label>
+					<input type="text" name="name" id="name" value="" placeholder="請輸入姓名" />
+					<br />
+					<hr />
+					<label for="address">地址：</label>
+					<input type="text" name="address" id="address" value="" placeholder="請輸入地址"/>
+					<br />
+					<hr />
+					<label for="birthday">出生：</label>
+					<select>
+						<option value ="">2000</option>
+						<option value ="">1999</option>
+						<option value ="">1998</option>
+					</select>
+					<span>年</span>
+
+					<select>
+						<option value ="">4</option>
+						<option value ="">3</option>
+						<option value ="">2</option>
+					</select>
+					<span>月</span>
+
+					<select>
+						<option value ="">3</option>
+						<option value ="">2</option>
+						<option value ="">1</option>
+					</select>
+					<span>日</span>
+					<br />
+					
+					<button style="margin-top: 20px;" type="button" style="width: 200px;height: 30px;">提交個人信息</button>
+				</fieldset>
+				<fieldset id="">
+					<legend>其他信息</legend>
+						<span>你喜歡這個表單嗎？</span>
+						<br />
+						<input type="radio" name="" id="" value="1" />
+						<span>喜歡</span>
+						<br />
+						<input type="radio" name="" id="" value="0" />
+						<span>不喜歡</span>
+						<br />
+						<hr />
+						<span>你喜歡什麼運動？</span>
+						<br />
+						<input type="checkbox" name="" id="" value="1" />
+						<span>唱</span>
+						<input type="checkbox" name="" id="" value="2" />
+						<span>跳</span>
+						<input type="checkbox" name="" id="" value="3" />
+						<span>rap</span>
+						<input type="checkbox" name="" id="" value="4" />
+						<span>籃球</span>	
+						<br />
+						<hr />
+						<span style="margin-top: 20px;">寫下你的建議：</span>
+						<br />
+						<textarea cols="50" rows="5"></textarea>
+						<br />
+					
+						<button style="margin-top: 20px;" type="button" style="width: 200px;height: 30px;">提交其他信息</button>
+				</fieldset>
+			</form>
+	
+		</div>
+			<ul id="menu">
+			<li>
+				<a id="e" href="#">ssmy</a>
+				<ul>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+				</ul>
+			</li>
+			<li>
+				<a id="r" href="#">tobe</a>
+				<ul>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+				</ul>
+			</li>
+			<li>
+				<a id="t" href="#">lllll</a>
+				<ul>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+					<li>ssmy1</li>
+				</ul>
+			</li>
+		</ul>
+		<script charset="UTF-8">
+			$(document).ready(function(){
+				$box = $("input[name=name]")
+				$box.attr("value","seagull")
+				$box.css("background-color","red")
+			})
+		</script>
+		
+	</body>
+</html>

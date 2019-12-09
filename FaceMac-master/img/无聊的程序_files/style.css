@@ -1,0 +1,106 @@
+
+#o{
+	color: brown;
+	background-image: url(../img/4.png);
+}
+h1{
+	background-color: blue;
+}
+ol li{
+	background-image: url(../img/5.png);
+	width: 500px;
+	height: 20px;
+}
+#j ,#k ,#l {
+	color: red;
+}
+ul li a{
+	color: red;
+	text-decoration: none;
+}
+.p{
+	display: inline-block;
+	text-align: center;
+	width: 150px;
+}
+a:link{
+	color: aqua;
+}
+a:visited{
+	color: #0000FF;
+}
+a:hover{
+	color: red;
+}
+a:active{
+	color: burlywood;
+}
+#w{
+	font-size: 20px;
+}
+#e,#r,#t{
+	color: red;
+	background-color: #DEB887;
+	
+	
+}
+#menu ul{
+	display: none;
+}
+#menu>li:hover ul{
+	display: block;
+}
+#div1{
+	background-color: #DEB887;
+	height: 30px;
+	margin-top: 20px;
+	position: fixed;
+	bottom: 0px;
+
+}
+.m{
+	display: inline-block;
+	width: 500px;
+	text-align: center;
+}
+#div2{
+
+	
+}
+#box{
+	background-color: khaki;
+}
+#Main{
+	background-color: red;
+	margin-top: 20px;
+	height: 300px;
+	position: relative;
+}
+#leftMain{
+	background-color: bisque;
+	width: 500px;
+	height: 300px;
+	position: left;
+	position: absolute;
+	
+}
+#rightMain{
+	background-color: bisque;
+	width: 500px;
+	height: 300px;
+	position: right;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+#ol{
+	width: 505px;
+	height: 300px;
+}
+#oo{
+	width: 505px;
+	height: 300px;
+	position: absolute;
+	right: 500px;
+}

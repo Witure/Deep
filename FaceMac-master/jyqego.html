@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>绑定事件</title>
+		<script src="js/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+		<div id="t1">
+			<button id="but5">我是一次性的</button>
+			</br>
+			</br>
+			<button id="but">添加一个p标签</button>
+		</div>
+		<div id="t2">
+			<p>seagull is a good man</p>
+			<p>seagull is a nice man</p>
+			<p>seagull is a cool man</p>
+			<p>seagull is a handsome man</p>
+			
+		</div>
+		<div id="t3">
+			<button id="but2">你瞅啥！</button>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// 1.bind
+				// 问题：1.bind是隐式迭代,逐个绑定性能很低
+				// 		 2.一般用于有ID的标签绑定事件
+				$("div[id=t2] p").bind("click",function(){
+					console.log($(this).text())
+				})
+				//bind 移除事件
+				$("div[id=t2] p").unbind("click")
+				// $("div[id=t1] button").bind("click",function(){
+				// 	$("div[id=t1]").append($("<p>seagull is a perfect man</p>"))
+				// })
+				
+				// 2.delegate
+				// 事件委托方式,比如这个例子中,其实是给div标签绑定了一个事件,事件是该div的
+				// button被点击时触发增加一个p标签的事件,因此只需要绑定一次
+				// 问题:DOM层级比较深的时候,事件向内部传递时耗费时间比较多
+				$("div[id=t1]").delegate(" button","click",function(){
+					$("div[id=t1]").append($("<p>seagull is a perfect man</p>"))
+				})
+				//delegate 移除事件
+				$("div[id=t1]").undelegate("click")
+				// 3.on 
+				// 一般来说用的更多,也是绑定事件给父类,依然不能层级很深,但有时候没办法
+				$("div[id=t3]").on("click","button:contains('你瞅啥！')",function(){
+					$("div[id=t3]").append("<button>瞅你咋地！</button>")
+				})
+				$("div[id=t3]").on("click","button:contains('瞅你咋地！')",function(){
+					$("div[id=t3]").append("<button>你瞅啥！</button>")
+				})
+				//on 移除事件
+				$("div[id=t3]").off("click","button:contains('你瞅啥！')")
+				
+				// 4.one
+				// 一次性事件
+				$("#but5").one("click",function(){
+					$("div[id=t3]").append("<h1>seagull is a good man</h1>")
+				})
+			})
+		</script>
+	</body>
+</html>

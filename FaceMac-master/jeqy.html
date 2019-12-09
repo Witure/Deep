@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jequery 调试</title>
+		<link rel="stylesheet" type="text/css" href="css/jeqy.css" />
+		<script src="js/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<input type="text" name="name" id="name" value="" placeholder="請輸入姓名" />
+			<p class="pp" id="p1" name="s" >seagull is a good man</p>
+			<p class="pp" id="p2" name="s">seagull is a nice man</p>
+			<p class="pp" id="p3">seagull is a handsome man</p>
+			<p class="pp">ssmy is a good man</p>
+		</div>
+		<div id="box2">
+			<p class="pp">ssmy is a nice man</p>
+			<p class="pp">ssmy is a handsome man</p>
+			<p class="pp">gogogogogogogogogogogo</p>
+			<button>设置 p 元素的背景色</button>
+		</div>
+		<script  charset="utf-8">
+			$(document).ready(function(){
+				 $sea = $(".pp[id=p3]")
+				 $sea.css({"color":"red"})
+				 console.log($sea)
+				 $sss = $(":button")
+				 $sss.css({"background-color":"red"})
+				 $sea.text("hello world wakakkakakaka")
+				 $ax = $("input[id=name]")
+				 $ax.val("seagull")
+				 $jsp = $("<h1>好运来那个好运来，好运来xxxxxxx</ h1>")
+				 $("div[id=box2]").append($jsp)
+				 $("p[id=p2]").remove()
+				 $("p[id=p1]").bind("click",function(){
+					 $(this).clone().insertAfter($(this))
+				 })
+				 
+			})
+		</script>
+	</body>
+</html>

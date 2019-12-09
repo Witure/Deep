@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		
+		
+		
+		
+		<script type="text/javascript">
+			$("#btn").bind("click",function(){
+				
+				//发起网络请求,必须要同源,同协议,同ip（主机）,同端口
+				$.ajax({
+					type:"get",
+					url:"xxxxxxxxx",  //json文件在服务器的路由
+					data:{a:1,b:2},  //用来给服务器发送数据
+					dataType:"json",
+					success:function(data,textStatus){
+						// console.log(data)						
+						var d = data["json"]["键"]  //这里当成数组理解即可
+						console.log(d)
+						
+						for(var i = 0; i < d.length; i++){
+							var info = d[i]
+							var $p = $("<p>"+ infp["xxx"]+"</p>")
+							$("#box").append($p)
+						}
+				
+					}
+					
+				});
+			})
+		</script>
+	</body>
+</html>

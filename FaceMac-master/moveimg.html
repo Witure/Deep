@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动画</title>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="h" style="width: 200px;height: 200px;background-color: #FF0000;">
+			
+		</div>
+		<!-- <input type="text" name="text" id="text" value="" /> -->
+		<!-- <a href="red.html" id="link">点我跳转</a> -->
+		<br />
+		<button id="b1">显示</button>
+		<button id="b2">隐藏</button>
+		<button id="b3">切换</button>
+		<br />
+		<br />
+		<button id="b4">淡入</button>
+		<button id="b5">淡出</button>
+		<button id="b7">切换</button>
+		<br />
+		<br />
+		<button id="b6">透明</button>
+		<br />
+		<br />
+		<button id="a1">变短</button>
+		<button id="a2">变长</button>
+		<button id="a3">切换</button>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#b2").bind("click",function(){
+					// 这里值可以用slow:600    normal:400     fast:200
+					$("#h").hide(500,function(){
+						console.log("动画结束")
+					})
+				})
+				$("#b1").bind("click",function(){
+					// 用法同hide
+					$("#h").show(500)  
+				})
+				$("#b3").bind("click",function(){
+					// 用法同hide
+					$("#h").toggle(500)  
+				})
+				$("#b4").bind("click",function(){
+					// 用法同hide
+					$("#h").fadeOut(500)  
+				})
+				$("#b5").bind("click",function(){
+					// 用法同hide
+					$("#h").fadeIn(500)  
+				})
+				$("#b7").bind("click",function(){
+					// 用法同hide
+					$("#h").fadeToggle(500)  
+				})
+				$("#b6").bind("click",function(){
+					// 只是透明,位置还在
+					$("#h").fadeTo(500,0)  
+				})
+				$("#a1").bind("click",function(){
+					// 用法同hide
+					$("#h").slideUp(500)  
+				})
+				$("#a2").bind("click",function(){
+					// 用法同hide
+					$("#h").slideDown(500)  
+				})
+				$("#a3").bind("click",function(){
+					// 用法同hide
+					// var a_1 = this
+					$("#h").slideToggle(500,function(){
+						if ($("#h").is(':hidden')) {
+							$("#a3").text("变 long")
+						} else{
+							$("#a3").text("变 short")
+						}
+					})  
+				})
+				
+			})
+		</script>
+	</body>
+</html>

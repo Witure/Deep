@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>阻止冒泡....</title>
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="h" style="width: 200px;height: 200px;background-color: #FF0000;">
+			
+		</div>
+		<input type="text" name="text" id="text" value="" />
+		<a href="red.html" id="link">点我跳转</a>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// 单纯用这两个绑定效果,会导致点击box的时候body也会被点击
+				// $("body").bind("click",function(){
+				// 	$(this).css("background-color","blue")
+				// })
+				// 
+				// $("#h").bind("click",function(){
+				// 	$(this).css("background-color","yellow")
+				// })
+				$("body").bind("click",function(){
+					$(this).css("background-color","blue")
+				})
+				
+				$("#h").bind("click",function(){
+					$(this).css("background-color","yellow")
+					// 阻止冒泡和默认行为,大概可以理解为程序执行到这就退出
+					return false
+				})
+				
+				$("#text").bind("click",function(){
+					return false
+				})
+				
+				$("#link").bind("click",function(e){
+					var d = window.confirm("网站有病毒！是否继续访问？")
+					if (d == false){
+						e.stopPropagation()
+						e.preventDefault()
+					}
+					if (d == true){
+						e.stopPropagation()
+					}
+				})
+				
+
+			})
+		</script>
+	</body>
+</html>
